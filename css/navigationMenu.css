@@ -1,0 +1,50 @@
+.button-toggle-navigation {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 0.25em solid #fafafa;
+  border-top: 0.25em solid #fafafa;
+  font-size: 18px;
+  cursor: pointer;
+  height: 1.5em;
+  margin: .75em .375em;
+  position: relative;
+  -webkit-transition: all 150ms ease-out;
+          transition: all 150ms ease-out;
+  width: 2.25em;
+}
+.button-toggle-navigation::after, .button-toggle-navigation::before {
+  border-bottom: 0.25em solid #fafafa;
+  bottom: .375em;
+  content: '';
+  height: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  -webkit-transition: -webkit-transform 200ms ease-out;
+          transition: transform 200ms ease-out;
+
+}
+
+.isActive {
+  border-color: transparent;
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+.isActive::after, .isActive::before {
+  -webkit-transition: -webkit-transform 200ms ease-out;
+          transition: transform 200ms ease-out;
+}
+.isActive::after {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+.isActive::before {
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

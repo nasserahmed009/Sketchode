@@ -1,0 +1,408 @@
+@import url(http://fonts.googleapis.com/css?family=Quicksand:700)
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,700,400)
+@import animate.css
+@import navigationMenu.css
+
+$orange : #ff8b0f
+$darkBlue : #000033
+
+=border-radius($radius)
+	-webkit-border-radius: $radius
+	-moz-border-radius:    $radius
+	-ms-border-radius:     $radius
+	border-radius:         $radius
+
+=transition($x)
+	-webkit-transition: $x
+	-moz-transition:    $x
+	-ms-transition:     $x
+	transition:         $x
+
+=transform($y)
+	-webkit-transform: $y
+	-moz-transform:    $y
+	-ms-transform:     $y
+	transform:         $y
+@media (max-width: 750px)
+	header
+		padding: 15px
+	.headerInfo
+		padding: 15px
+	.portfolioFilter
+		display: none
+	section
+		padding: 15px
+		
+h1
+	font-size: 45px
+
+h2
+	font-size: 40px
+h3
+	font-size: 30px
+h4
+	font-size: 20px
+p
+	font-size: 13px
+	margin-bottom: 20px
+h1,h2,h3,h4,p
+	font-family: raleway
+section
+	margin: 80px 0px 80px 0px
+h1.sectionTitle
+	color: $darkBlue
+	font-weight: 500
+	text-align: center
+	margin-bottom: 10px
+ul
+	list-style: none
+
+a.button
+	padding: 15px 25px
+	font-family: raleway
+	font-size: 18px
+	color: #fff
+	text-decoration: none
+	+border-radius(60px)
+	border: 1px solid #fff	
+	margin-top: 20px
+	background: linear-gradient(to right, transparent 50%, $orange 50%)
+	background-size: 200% 100%
+	+transition(all .5s ease-in-out)
+	&:hover
+		background-position: -100% 100%
+
+*
+	padding: 0
+	margin: 0
+	box-sizing: border-box
+
+header
+	width: 100%
+	height: auto
+	background: url(../images/headerImg.jpg)
+	overflow: hidden
+	background-repeat: no-repeat
+	background-size: cover
+	background-attachment: fixed
+	background-position: center bottom
+	.tobBar
+		position: relative
+		z-index: 99
+		margin-top: 50px
+	.logo
+		float: left
+	.logoCircle
+		position: relative
+		width: 50px
+		height: 50px
+		background: transparent
+		+border-radius(50%)
+		border: 2px solid #fff
+		text-align: center
+		overflow: hidden
+		float: left
+	
+		i
+			line-height: 50px
+			color: white
+			+transform(rotate(180deg))
+			font-size: 35px
+			position: absolute
+			top: 10px
+			left: -2px
+	h1.logoText
+		display: inline
+		font-family: quicksand
+		text-transform: uppercase
+		font-size: 25px
+		color: #fff
+		margin-left: 15px
+		line-height: 50px
+	nav
+		float: right
+		ul
+			li
+				float: left
+				padding: 10px 15px
+				a
+					text-decoration: none
+					color: #fff
+					font-size: 15px
+					font-family: raleway
+					+transition(all .3s ease-in-out)
+					&:hover
+						color : $orange
+	.button-toggle-navigation
+		float: right
+		display: none
+		position: absolute
+		right: 0
+	.headerInfo
+		margin-top: 200px
+		margin-bottom: 200px
+		position: relative
+		z-index: 999
+		h1,p
+			color: #fff
+		p
+			font-size: 18px
+		
+
+	
+	@media(max-width: 750px)
+		.button-toggle-navigation
+			display: block
+		nav
+			text-align: right
+			display: none
+			background: transparent
+			width: 100%
+			ul
+			
+				li
+					float: none
+.portfolio
+	ul.portfolioFilter
+		text-align: center
+		li
+			display: inline
+			padding: 10px 15px
+			a
+				text-decoration: none
+				color: #333
+				font-size: 15px
+				font-family: raleway
+				+transition(all .3s ease-in-out)
+				&:hover
+					color : $orange
+			a.active
+				color: $orange
+				font-weight: 700
+	.portfolioItems
+		margin-top: 25px
+		div
+			position: relative
+			margin-bottom: 25px
+			overflow: hidden
+			justify-content: center
+			&:hover > span
+				left: 0
+			
+			&:hover > a > img
+				+transform(scale(1.2))
+			span
+				background: $orange
+				color: #fff
+				font-family: raleway
+				padding: 10px
+				position: absolute
+				z-index: 9999
+				bottom: 0
+				left: -100%
+				+transition(all .5s ease-in-out)
+			a
+				img
+					+transition(all .5s ease-in-out)
+			
+.customersReviews
+	width: 100%
+	height: auto
+	background: url(../images/customersReviews.jpg)
+	background-attachment: fixed
+	background-size: cover
+	color: #fff
+	font-family: "raleway", sans-serif
+	text-align: center
+	
+	.avatarContainer
+		border: 1px solid #fff
+		+border-radius(135px)
+		width: 135px
+		height: 135px
+		position: relative
+		margin: 100px auto 0px auto
+		.avatar
+			background: url(../images/nancyJohn.jpg)
+			width: 120px
+			height: 120px
+			background-size: cover
+			background-position: center
+			+border-radius(120px)
+			position: absolute
+			top: 50%
+			left: 50%
+			margin: -60px -60px
+	p
+		margin: 20px auto 100px auto
+	
+
+.ourBlog
+	.blogPosts
+		margin-top: 80px
+		.blogPost
+			margin-bottom: 40px
+			line-height: 1.8
+			.postImg
+				width: 100%
+				height: 350px
+				+border-radius(10px)
+				overflow: hidden
+				&:hover > .postImgHover
+					opacity: 1
+				.postImgHover
+					width: 100%
+					height: 100%
+					background: rgba(0,0,0,0.8)
+					position: relative
+					opacity: 0
+					+transition(all .5s ease-in-out)
+					a
+						display: block
+						width: 100px
+						height: 100px
+						background: transparent
+						text-align: center
+						+border-radius(50px)
+						position: absolute
+						border: 2px solid #fff
+						top: 50%
+						left: 50%
+						margin: -50px auto auto -50px
+						+transition(all .5s ease-in-out)
+						&:hover
+							background: $orange
+						i
+							color: white
+							line-height: 100px
+							font-size: 30px
+			.post1
+				background: url(../images/post1.jpg)
+				background-position: center
+				background-size: contain
+				background-attachment: fixed
+			
+			.post2
+				background: url(../images/post2.jpg)
+				background-position: center
+				background-size: contain
+				background-attachment: fixed
+			.post3
+				background: url(../images/post3.jpg)
+				background-position: center
+				background-size: contain
+				background-attachment: fixed
+				
+			@media (max-width: 750px)
+				.postImg
+					background-attachment: scroll
+					background-size: cover
+			h3
+				font-family: raleway
+				font-weight: 400
+				color: $darkBlue
+			span
+				font-family: raleway
+				font-weight: 400
+				font-size: 15
+				strong
+					color: $orange
+			p
+				margin: 20px auto
+.shareModal
+	position: fixed
+	height: 100%
+	width: 100%
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background: rgba(0,0,0,0.95)
+	text-align: center
+	overflow: hidden
+	display: none
+	.fa-close
+		font-size: 30px
+		color: #fff
+		margin-bottom: 25px
+		cursor: pointer
+		
+	.modalContainer
+		margin-top: 200px
+		@media(max-width: 750px)
+			margin-top: 10px
+	h1
+		color: #fff
+		@media (max-width: 750px)
+			font-size: 20px
+	a
+		display: inline-block
+		width: 100px
+		height: 100px
+		background: transparent
+		+border-radius(100px)
+		margin: 50px 15px
+		border: 2px solid #fff
+		+transition(all .3s ease-in-out)
+		@media (max-width: 750px)
+			width: 60px
+			height: 60px
+			display: block
+			margin: 20px auto
+		&:hover
+			+transform(rotate(360deg))
+		i
+			line-height: 100px
+			color: #fff
+			font-size: 25px
+			@media (max-width: 750px)
+				font-size: 20px
+				line-height: 60px
+	a.facebook:hover
+		background: #3b5998
+	a.twitter:hover
+		background: #4099FF
+	a.youtube:hover
+		background: #cc181e
+	a.rss:hover
+		background: #f89921
+
+#toTop 
+	display: none
+	text-decoration: none
+	position: fixed
+	bottom: 10px
+	right: 10px
+	overflow: hidden
+	width: 51px
+	height: 51px
+	border: none
+	text-indent: 100%
+	background: url(../images/ui.totop.png) no-repeat left top
+
+#toTopHover 
+	background: url(../images/ui.totop.png) no-repeat left -51px
+	width: 51px
+	height: 51px
+	display: block
+	overflow: hidden
+	float: left
+	opacity: 0
+	-moz-opacity: 0
+	filter: alpha(opacity=0)
+
+#toTop:active, #toTop:focus 
+	outline: none
+
+.modal
+	position: fixed
+	height: 100%
+	width: 100%
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background: rgba(0,0,0,0.95)
+	text-align: center
+	overflow: hidden
+	display: none
